@@ -5,7 +5,7 @@ import ApiError from '../utlis/ApiError.js'
 
 
 const api = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: `${import.meta.env.VITE_BACKEND_URI}/api`,
     withCredentials: true,
     headers: {
         "Content-Type": "application/json"

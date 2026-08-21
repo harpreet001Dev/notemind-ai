@@ -18,11 +18,14 @@ const authtenticateUser = async (req, res, next) => {
         req.user = user;
         next();
     } catch (error) {
-        if (error.name === "TokenExpiredError") {
-            return next(new ApiError(401, "Token is Expired!"))
-        }
-        return next(new ApiError(401, "Invalid auth token"))
+    console.error("JWT ERROR:", error.name, error.message);
+
+    if (error.name === "TokenExpiredError") {
+        return next(new ApiError(401, "Token is Expired!"));
     }
+
+    return next(new ApiError(401, "Invalid auth token"));
+}
 
 
 }

@@ -6,6 +6,7 @@ import connectDB from "./src/db/connect.js";
 import router from "./src/routers/index.js";
 import authtenticateUser from "./src/middlewares/auth.middleware.js";
 import cookieParser from "cookie-parser";
+import { testConnection } from "./src/config/testChroma.js";
 
 const PORT=process.env.PORT || 5000;
 

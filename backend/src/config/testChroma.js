@@ -1,6 +1,6 @@
 import client from "./chroma.js";
 
-const testConnection=async()=>{
+export const testConnection=async()=>{
     try {
         const version=await client.version();
         console.log("✅ Connected to Chroma!");

@@ -1,9 +1,9 @@
 import {ChromaClient} from 'chromadb';
 
 const client = new ChromaClient({
-    host: "localhost",
-    port: 8000,
-    ssl: false
+    host: process.env.CHROMA_HOST,
+    port: process.env.CHROMA_PORT,
+    ssl: process.env.CHROMA_SSL
 });
 
 export default client;
